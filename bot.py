@@ -1,1 +1,89 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MobileIran | فروشگاه موبایل</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+<header>
+  <div class="container header-box">
+    <div class="logo">📱 MobileIran</div>
+    <nav>
+      <a href="#products">محصولات</a>
+      <a href="#about">درباره ما</a>
+      <a href="#contact">تماس</a>
+      <a href="https://ble.ir/MobileIran2037Bot" class="btn-bot">🛒 خرید از بله</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <h1>به MobileIran خوش آمدید</h1>
+    <p>فروشگاه تخصصی موبایل — اورجینال، گارانتی معتبر، ارسال سریع</p>
+    <a href="#products" class="btn-main">مشاهده محصولات</a>
+  </div>
+</section>
+
+<section id="products" class="products">
+  <div class="container">
+    <h2>محصولات ما</h2>
+    <div class="grid">
+      <div class="card">
+        <div class="card-img">📱</div>
+        <h3>سامسونگ A54</h3>
+        <p>۶ ماه گارانتی — اورجینال</p>
+        <div class="price">۱۵,۰۰۰,۰۰۰ تومان</div>
+        <a href="https://ble.ir/MobileIran2037Bot" class="btn-buy">خرید</a>
+      </div>
+      <div class="card">
+        <div class="card-img">📱</div>
+        <h3>شیائومی Note 13</h3>
+        <p>اورجینال — ارسال سریع</p>
+        <div class="price">۹,۵۰۰,۰۰۰ تومان</div>
+        <a href="https://ble.ir/MobileIran2037Bot" class="btn-buy">خرید</a>
+      </div>
+      <div class="card">
+        <div class="card-img">📱</div>
+        <h3>آیفون 13</h3>
+        <p>اکتیو — سلامت ۱۰۰٪</p>
+        <div class="price">۴۵,۰۰۰,۰۰۰ تومان</div>
+        <a href="https://ble.ir/MobileIran2037Bot" class="btn-buy">خرید</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="about">
+  <div class="container">
+    <h2>درباره ما</h2>
+    <p>MobileIran یه فروشگاه تخصصی موبایله که با هدف ارائه گوشی‌های اورجینال با گارانتی معتبر و قیمت مناسب راه‌اندازی شده.</p>
+    <div class="features">
+      <div class="feature">✅ اورجینال</div>
+      <div class="feature">✅ گارانتی معتبر</div>
+      <div class="feature">✅ ارسال سریع</div>
+      <div class="feature">✅ پشتیبانی ۲۴/۷</div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="container">
+    <h2>تماس با ما</h2>
+    <p>💬 پشتیبانی: <a href="https://ble.ir/MohammadMahdi2037">@MohammadMahdi2037</a></p>
+    <p>📢 کانال: <a href="https://ble.ir/MobileIran2037">@MobileIran2037</a></p>
+    <p>🤖 ربات خرید: <a href="https://ble.ir/MobileIran2037Bot">ورود به ربات</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>© 2026 MobileIran — تمامی حقوق محفوظ است.</p>
+  </div>
+</footer>
+
+</body>
+</html>
