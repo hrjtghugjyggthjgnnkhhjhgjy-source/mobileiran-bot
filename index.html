@@ -8,7 +8,19 @@
 </head>
 <body>
 
-<div class="bg-gradient"></div>
+<!-- صفحه لودینگ -->
+<div id="loader">
+  <div class="loader-content">
+    <div class="loader-logo">📱</div>
+    <h2>MobileIran</h2>
+    <div class="loader-spinner"></div>
+    <p>لطفاً منتظر بمانید...</p>
+  </div>
+</div>
+
+<!-- محتوای سایت -->
+<div id="main-content" class="hidden">
+
 <div class="bg-blobs">
   <div class="blob blob1"></div>
   <div class="blob blob2"></div>
@@ -39,21 +51,21 @@
   <div class="container">
     <h2>محصولات ما</h2>
     <div class="grid">
-      <div class="card glass">
+      <div class="card glass float1">
         <div class="card-img">📱</div>
         <h3>سامسونگ A54</h3>
         <p>۶ ماه گارانتی — اورجینال</p>
         <div class="price">۱۵,۰۰۰,۰۰۰ تومان</div>
         <a href="https://ble.ir/MobileIran2037Bot" class="btn-buy">خرید</a>
       </div>
-      <div class="card glass">
+      <div class="card glass float2">
         <div class="card-img">📱</div>
         <h3>شیائومی Note 13</h3>
         <p>اورجینال — ارسال سریع</p>
         <div class="price">۹,۵۰۰,۰۰۰ تومان</div>
         <a href="https://ble.ir/MobileIran2037Bot" class="btn-buy">خرید</a>
       </div>
-      <div class="card glass">
+      <div class="card glass float3">
         <div class="card-img">📱</div>
         <h3>آیفون 13</h3>
         <p>اکتیو — سلامت ۱۰۰٪</p>
@@ -91,6 +103,25 @@
     <p>© 2026 MobileIran — تمامی حقوق محفوظ است.</p>
   </div>
 </footer>
+
+</div>
+
+<script>
+  // بعد از ۲ ثانیه لودر مخفی و سایت نشون داده می‌شه
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      document.getElementById('loader').style.opacity = '0';
+      document.getElementById('loader').style.transition = 'opacity 0.5s';
+      setTimeout(() => {
+        document.getElementById('loader').style.display = 'none';
+        const main = document.getElementById('main-content');
+        main.classList.remove('hidden');
+        main.style.opacity = '1';
+        main.style.transition = 'opacity 0.8s';
+      }, 500);
+    }, 2000);
+  });
+</script>
 
 </body>
 </html>
