@@ -1,1 +1,144 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MobileIran | فروشگاه موبایل</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+<!-- صفحه لودینگ -->
+<div id="loader">
+  <div class="loader-content">
+    <div class="loader-logo">📱</div>
+    <h2>MobileIran</h2>
+    <div class="loader-spinner"></div>
+    <p>لطفاً منتظر بمانید...</p>
+  </div>
+</div>
+
+<!-- محتوای سایت -->
+<div id="main-content" class="hidden">
+
+<div class="bg-blobs">
+  <div class="blob blob1"></div>
+  <div class="blob blob2"></div>
+  <div class="blob blob3"></div>
+</div>
+
+<header>
+  <div class="container header-box glass">
+    <div class="logo">📱 MobileIran</div>
+    <nav>
+      <a href="#products">محصولات</a>
+      <a href="#about">درباره ما</a>
+      <a href="#contact">تماس</a>
+      <a href="https://ble.ir/MobileIran2037Bot" class="btn-bot">🛒 خرید از بله</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container hero-box glass">
+    <h1>به <span>MobileIran</span> خوش آمدید</h1>
+    <p>فروشگاه تخصصی موبایل — اورجینال، گارانتی معتبر، ارسال سریع</p>
+    <a href="#products" class="btn-main">مشاهده محصولات</a>
+  </div>
+</section>
+
+<section id="products" class="products">
+  <div class="container">
+    <h2>محصولات ما</h2>
+    <!-- این بخش خالی است و با جاوا اسکریپت پر می‌شود -->
+    <div class="grid" id="products-container">
+      <p style="text-align:center; width:100%; grid-column: 1/-1; color:#3b82f6;">در حال دریافت محصولات...</p>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="about">
+  <div class="container about-box glass">
+    <h2>درباره ما</h2>
+    <p>MobileIran یه فروشگاه تخصصی موبایله که با هدف ارائه گوشی‌های اورجینال با گارانتی معتبر و قیمت مناسب راه‌اندازی شده.</p>
+    <div class="features">
+      <div class="feature">✅ اورجینال</div>
+      <div class="feature">✅ گارانتی معتبر</div>
+      <div class="feature">✅ ارسال سریع</div>
+      <div class="feature">✅ پشتیبانی ۲۴/۷</div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="container contact-box glass">
+    <h2>تماس با ما</h2>
+    <p>💬 پشتیبانی: <a href="https://ble.ir/MohammadMahdi2037">@MohammadMahdi2037</a></p>
+    <p>📢 کانال: <a href="https://ble.ir/MobileIran2037">@MobileIran2037</a></p>
+    <p>🤖 ربات خرید: <a href="https://ble.ir/MobileIran2037Bot">ورود به ربات</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>© 2026 MobileIran — تمامی حقوق محفوظ است.</p>
+  </div>
+</footer>
+
+</div>
+
+<script>
+  // ۱. کد لودینگ (همون کد قبلی خودت)
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      document.getElementById('loader').style.opacity = '0';
+      document.getElementById('loader').style.transition = 'opacity 0.5s';
+      setTimeout(() => {
+        document.getElementById('loader').style.display = 'none';
+        const main = document.getElementById('main-content');
+        main.classList.remove('hidden');
+        main.style.opacity = '1';
+        main.style.transition = 'opacity 0.8s';
+      }, 500);
+    }, 2000);
+  });
+
+  // ۲. کد جدید: دریافت محصولات از فایل data.json
+  document.addEventListener("DOMContentLoaded", () => {
+    fetch('data.json') // فایل دیتابیسی که ربات میسازه
+      .then(response => response.json())
+      .then(products => {
+        const container = document.getElementById('products-container');
+        container.innerHTML = ''; // پاک کردن متن "در حال دریافت"
+        
+        if(products.length === 0) {
+          container.innerHTML = '<p style="text-align:center; width:100%; grid-column: 1/-1; color:#64748b;">در حال حاضر محصولی موجود نیست.</p>';
+          return;
+        }
+
+        // ساخت کارت‌ها بر اساس اطلاعات دیتابیس
+        products.forEach((p, index) => {
+          // برای اینکه انیمیشن شناور کارت‌ها به هم نریزه
+          const floatClass = index % 3 === 0 ? 'float1' : (index % 3 === 1 ? 'float2' : 'float3');
+          
+          container.innerHTML += `
+            <div class="card glass ${floatClass}">
+              <div class="card-img">📱</div>
+              <h3>${p.name}</h3>
+              <p>${p.desc}</p>
+              <div class="price">${p.price}</div>
+              <a href="https://ble.ir/MobileIran2037Bot" class="btn-buy">خرید</a>
+            </div>
+          `;
+        });
+      })
+      .catch(error => {
+        console.error('خطا در خواندن محصولات:', error);
+        document.getElementById('products-container').innerHTML = 
+          '<p style="text-align:center; width:100%; grid-column: 1/-1; color:red;">خطا در دریافت محصولات از سرور.</p>';
+      });
+  });
+</script>
+
+</body>
+</html>
